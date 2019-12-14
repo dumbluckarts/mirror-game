@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name># common</name>
+    <events>
+        <include>player sheet</include>
+        <include>game controls</include>
+        <event-block sid="479282835572358">
+            <conditions>
+                <condition id="3" name="All scripts loaded" sid="866295178333717" type="JS" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>example scrolling text. Types word &quot;test&quot; with 0.1s between each letter, waits, then destroys the text on DONE</comment>
+                <event-block sid="738969979754652">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="747467521065034" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="584312659495495" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="6" name="Call function" sid="507476188765690" type="JS">
+                            <param id="0" name="Expression">&quot;dialogue.text&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;test&quot;{###}200</param>
+                        </action>
+                        <action id="6" name="Call function" sid="260726401369040" type="JS">
+                            <param id="0" name="Expression">&quot;dialogue.clear&quot;</param>
+                            <param id="1" name="Parameter {n}">3000</param>
+                        </action>
+                        <action id="6" name="Call function" sid="430083399260954" type="JS">
+                            <param id="0" name="Expression">&quot;dialogue.newline&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="6" name="Call function" sid="418520714705142" type="JS">
+                            <param id="0" name="Expression">&quot;dialogue.text&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;another test&quot;{###}50</param>
+                        </action>
+                        <action id="6" name="Call function" sid="252555657778877" type="JS">
+                            <param id="0" name="Expression">&quot;dialogue.clear&quot;</param>
+                            <param id="1" name="Parameter {n}">3000</param>
+                        </action>
+                        <action id="6" name="Call function" sid="177565853566149" type="JS">
+                            <param id="0" name="Expression">&quot;dialogue.start&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>set text to dialogue text</comment>
+                <event-block sid="554004177238112">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="651171601028714" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="835827073970998" type="Text">
+                            <param id="0" name="Text">JS.Value(&quot;dialogue.string&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

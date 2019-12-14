@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>game controls</name>
+    <events>
+        <comment>resize window on start</comment>
+        <event-block sid="328832810280575">
+            <conditions>
+                <condition id="-25" name="On loader layout complete" sid="510996416192601" type="System" />
+            </conditions>
+            <actions>
+                <action id="23" name="Set minimum size" sid="218523115820496" type="NWjs">
+                    <param id="0" name="Min width">OriginalWindowWidth*4</param>
+                    <param id="1" name="Min height">OriginalWindowHeight*4</param>
+                </action>
+                <action id="-16" name="Wait" sid="220864810226568" type="System">
+                    <param id="0" name="Seconds">0.06</param>
+                </action>
+                <action id="14" name="Set width" sid="636122238964173" type="NWjs">
+                    <param id="0" name="Width">WindowWidth+1</param>
+                </action>
+                <action id="15" name="Set height" sid="149342701710321" type="NWjs">
+                    <param id="0" name="Height">WindowHeight</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>resize window nicely to 16:9</comment>
+        <event-block sid="441104897318810">
+            <conditions>
+                <condition id="0" name="On function" sid="149077957291612" type="Function">
+                    <param id="0" name="Name">&quot;resizeWindow&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Set width" sid="376261281394967" type="NWjs">
+                    <param id="0" name="Width">WindowWidth-7</param>
+                </action>
+                <action id="15" name="Set height" sid="655533644623452" type="NWjs">
+                    <param id="0" name="Height">WindowHeight</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>fullscreen and resize controls</comment>
+        <event-block sid="641155434130165">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="637093932944140" type="Keyboard">
+                    <param id="0" name="Key">122</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="891484797687618">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="589269777991567" type="Keyboard">
+                            <param id="0" name="Key">17</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="891563595381432">
+                            <conditions>
+                                <condition id="10" name="Is fullscreen" sid="692840503857312" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Cancel fullscreen" sid="982082330192851" type="Browser" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="724521945779617">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="138964469794512" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="10" name="Request fullscreen" sid="341643918152023" type="Browser">
+                                    <param id="0" name="Mode">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="178955386133151">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="538843731710200" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="939277530147295" type="Function">
+                            <param id="0" name="Name">&quot;resizeWindow&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
