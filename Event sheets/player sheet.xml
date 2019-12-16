@@ -85,6 +85,28 @@
                                 </event-block>
                             </sub-events>
                         </event-group>
+                        <event-block sid="328238330125411">
+                            <conditions>
+                                <condition behavior="Platform" id="5" name="On jump" sid="641048513016055" type="player" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="557085254789595" type="player">
+                                    <param id="0" name="Object">dust1_Spr</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="950043470212577">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="629391966319343" type="dust1_Spr">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="721219895047812" type="dust1_Spr" />
+                            </actions>
+                        </event-block>
                         <event-group description="" inactive="1" sid="871755610731341" title="Controller">
                             <sub-events>
                                 <variable constant="0" name="adjustedSpeed" sid="291905994060651" static="1" type="number">0</variable>
@@ -265,5 +287,98 @@
                 </event-group>
             </sub-events>
         </event-group>
+        <event-block sid="386427184442445">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="653028179867758" type="player">
+                    <param id="0" name="Object">mirror_Spr</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="126757581681203" type="mirror_Spr">
+                    <param id="0" name="Object">interactE_Spr</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">&quot;interact&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="170522716023344">
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="925623149818375" type="player">
+                    <param id="0" name="Object">mirror_Spr</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="923075235933809" type="interactE_Spr" />
+            </actions>
+        </event-block>
+        <event-block sid="437433433677508">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="849930777339562" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="100598088623358" type="player">
+                    <param id="0" name="Object">mirror_Spr</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="807361878031369" type="System">
+                    <param id="0" name="Variable">Mirrored</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="510483686770468" type="System">
+                    <param id="0" name="Variable">Mirrored</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="796002764456831">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="840021069882705" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="729266343621072" type="player">
+                    <param id="0" name="Object">mirror_Spr</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="386309705535794" type="System">
+                    <param id="0" name="Variable">Mirrored</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="487572875947389" type="System">
+                    <param id="0" name="Variable">Mirrored</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="981202061762420">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="444780498351402" type="Keyboard">
+                    <param id="0" name="Key">86</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="955436142067959" type="player">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action behavior="Platform" id="4" name="Set jump strength" sid="292580318226590" type="player">
+                    <param id="0" name="Jump strength">500</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block disabled="1" sid="234114376001077">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="578126286237422" type="player" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="126189230540975" type="player">
+                            <param id="0" name="Jump strength">244</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

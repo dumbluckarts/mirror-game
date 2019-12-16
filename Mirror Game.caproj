@@ -21,6 +21,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -66,10 +67,13 @@
                     <behavior-type name="ScrollTo" sid="514791838872848">
                         <behavior id="scrollto" />
                     </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="281004168340443">
+                        <behavior id="bound" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="969129202403471" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\jacket.png">
                             <collision-poly>
                                 <point x="0.1875" y="0" />
                                 <point x="0.6875" y="0" />
@@ -144,8 +148,81 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="mirror_Spr" sid="373526937553146">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="648482186206142" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <image-point name="interact" x="0.53125" y="-0.3125" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="interactE_Spr" sid="176240466216645">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="407379773525417" speed="5">
+                    <frame duration="1" hotspotX="0.444444" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="dust1_Spr" sid="768915546930204">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="367959833331707" speed="10">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bouncePad_Spr" sid="713152991510855">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="964167402166474">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="876281988790938" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <collision-poly>
+                            <point x="0" y="0.6875" />
+                            <point x="1" y="0.6875" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="Bounce" pingpong="0" repeatcount="1" repeatto="0" sid="485783288620473" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <collision-poly>
+                            <point x="0" y="0.6875" />
+                            <point x="1" y="0.6875" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <collision-poly>
+                            <point x="0" y="0.75" />
+                            <point x="1" y="0.75" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="Interactables" plugin-id="Sprite" sid="904192221117745">
+            <members>
+                <member>mirror_Spr</member>
+            </members>
+        </family>
+    </families>
     <layout-folder>
         <layout>instance.xml</layout>
         <layout>Layout 1.xml</layout>
